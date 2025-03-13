@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lighting</title>
+  </head>
+
+  <style type="text/css">
+
+
+canvas{
+    padding-left: 500px;
+    padding-top: 150px;
+}
+
+h2{
+    margin-left: 500px; 
+    color: rgb(255, 255, 255); 
+}
+
+h3{
+    padding-left: 500px;
+    color: rgb(0, 0, 0)
+}
+
+h4{
+  padding-left: 500px; 
+  color: rgb(255, 255, 255);
+}
+#normal_on{
+
+  margin-left: 500px; 
+background-color: green;
+color: white;
+font-size: 20px;
+}
+#normal_off{
+
+background-color: rgb(255, 0, 0);
+color: white;
+font-size: 20px;
+}
+#light_on{
+  margin-top: 5px; 
+margin-left: 500px; 
+
+background-color: green;
+color: white;
+font-size: 20px;
+}
+#light_off{
+
+background-color: rgb(255, 0, 0);
+color: white;
+font-size: 20px;
+}
+#animate_on{
+margin-left: 500px; 
+background-color: green;
+color: white;
+font-size: 20px;
+}
+#animate_off{
+
+margin-top: 5px; 
+background-color: rgb(255, 0, 0);
+color: white;
+font-size: 20px;
+}
+#spotlight_on{
+margin-top: 5px; 
+margin-left: 500px; 
+background-color: green;
+color: white;
+font-size: 20px;
+}
+
+#spotlight_off{
+background-color: Red;
+color: white;
+font-size: 20px;
+}
+#numbd{
+  padding-left: 400px;
+  color: black;
+}
+
+#lightstatus{
+  padding-left: 400px;
+  color: black;
+}
+#camera_slide{
+  margin-left: 500px; 
+  margin-top: 10px; 
+}
+
+#red_slide{
+  margin-top: 10px; 
+  margin-left: 500px; 
+
+}
+#x_slide{
+ 
+  margin-left: 500px; 
+  margin-top: 20px;
+}
+
+  </style>
+
+  <body onload="main()">
+    <body style="background-color:rgb(255, 187, 0);"></body>
+    <canvas id="webgl" width="1600" height="800">
+    Please use a browser that supports "canvas"
+    </canvas>
+    
+    <form>
+      <div id="numbd"></div>
+
+      <div id = "lightstatus"></div>
+      <h2> 1.Zoom out if page is too large</h2>
+      <h2> 2.Use WASDQE for camera movement</h2>
+      <h2> 3.Arrows for crab movement</h2>
+
+<div>
+  <h3>Camera Angle</h3>
+  <input type="range" id="camera_slide" name="camera_slide" min="0" max="360" value="0" step="10" />
+</div>
+
+<div>
+  <h3>Light Controls</h3>
+  
+  <input type="range" id="red_slide" name="red_slide" min="0" max="1" value="1" step="0.1" />
+  <label for="red_slide">Red</label>
+
+  <input type="range" id="green_slide" name="green_slide" min="0" max="1" value="1" step="0.1" />
+  <label for="green_slide">Green</label>
+
+  <input type="range" id="blue_slide" name="blue_slide" min="0" max="1" value="1" step="0.1" />
+  <label for="blue_slide">Blue</label>
+</div>
+
+<div>
+  <h3>Light Position Controls</h3>
+  
+  <input type="range" id="x_slide" name="x_slide" min="-500" max="800" value="0" step="5" />
+  <label for="x_slide">X</label>
+
+  <input type="range" id="y_slide" name="y_slide" min="-100" max="800" value="0" step="5" />
+  <label for="y_slide">Y</label>
+
+  <input type="range" id="z_slide" name="z_slide" min="-700" max="600" value="0" step="5" />
+  <label for="z_slide">Z</label>
+</div>
+
+<div class="button-group">
+  <h3>Lighting</h3>
+  <button type="button" id="normal_on">Normal On</button>
+  <button type="button" id="normal_off">Normal Off</button>
+  <button type="button" id="light_on">Light On</button>
+  <button type="button" id="light_off">Light Off</button>
+  <button type="button" id="spotlight_on">Spotlight On</button>
+  <button type="button" id="spotlight_off">Spotlight Off</button>
+</div>
+
+<div>
+  <h3>Animation</h3>
+  <button type="button" id="animate_on">Start</button>
+  <button type="button" id="animate_off">Stop</button>
+</div>
+
+    </form> 
+    <script src = "lib/webgl-utils.js"></script>
+    <script src = "lib/webgl-debug.js"></script>
+    <script src = "lib/cuon-utils.js"></script>
+    <script src = "lib/cuon-matrix-cse160.js"></script>
+    <script src = "lighting.js"></script>
+    <script src = "camera.js"></script>
+    <script src = "triangle.js"></script>
+    <script src = "Cube.js"></script>
+    <script src = "Sphere.js"></script>
+  </body>
+</html>
